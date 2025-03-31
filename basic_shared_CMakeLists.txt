@@ -1,0 +1,31 @@
+cmake_minimum_required(VERSION 3.10)
+project(std_cout)
+
+# Create a shared library
+add_library(std_cout SHARED 
+    src/std_cout.cpp
+)
+
+# Specify where to place the compiled library
+set_target_properties(std_cout PROPERTIES
+    PUBLIC_HEADER "include/std_cout.hpp"
+    OUTPUT_NAME "std_cout"
+)
+
+include_directories(
+    ${PROJECT_SOURCE_DIR}/include
+)
+
+# Install rules for the library
+install(TARGETS std_cout
+    LIBRARY DESTINATION lib/${PROJECT_NAME}
+    PUBLIC_HEADER DESTINATION include/${PROJECT_NAME}
+)
+
+# install for a template file
+set(TPP_INSTALL_DIR "include/${PROJECT_NAME}") # Relative path
+# Install the .tpp files
+install(FILES 
+    include/std_cout.tpp
+    DESTINATION ${TPP_INSTALL_DIR} # Use the defined variable
+)
