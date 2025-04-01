@@ -12,6 +12,9 @@ class __attribute__((visibility("default"))) StdCout {
 public:
     StdCout() = default;
     template<typename T>
+    std::string convertIfBool(const T& value);
+    
+    template<typename T>
     void error(const T& msg);
     void error(const char* msg); // for overload
     template<typename... Args>

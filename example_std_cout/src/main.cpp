@@ -8,6 +8,7 @@ int main() {
     cout.info(true);
     cout.info(false);
     cout.info("name", ": Gunther", "a:", 10.0, "b:", true, "c:", 1);
+    cout.info("name", ": Gunther", "a:", 10.0, "b:", false, "c:", 1);
     std::cout << std::endl;
     
     cout.warn("hello", "world");
@@ -15,6 +16,7 @@ int main() {
     bool b = true;
     int c = 10;
     cout.warn("hello", "world", "a:", a, "b:", b, "c:", c);
+    cout.warn("hello", "world", "a:", a, "b:", b, "c:", c, "res:", true);
     std::cout << std::endl;
     
     cout.error("ERROR" ": unknown");
@@ -23,4 +25,5 @@ int main() {
     b = false;
     c = 100;
     cout.error("hello", world, "a:", a, "b:", b, "c:", c);
+    cout.error("hello", world, "a:", a, "b:", b, "c:", c, "res:", false);
 }
