@@ -3,4 +3,4 @@
 include("${CMAKE_CURRENT_LIST_DIR}/std_coutTargets.cmake")
 
 set(STD_COUT_LIBRARIES std_cout::std_cout)
-set(STD_COUT_INCLUDE_DIR "@CMAKE_INSTALL_PREFIX@/include")
+set(STD_COUT_INCLUDE_DIR "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME@")
