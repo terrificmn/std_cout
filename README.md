@@ -62,7 +62,7 @@ make
 > 물론 std_cout 빌드 및 install 이 된 후 사용해야 한다
 
 ## 내 프로젝트에서 사용 시 CMakeLists.txt
-내 프로젝트에서 libstd_cout 링크를 시켜려면   
+내 프로젝트에서 libstd_cout 링크를 해서 사용하려면..  
 find_package, target_link_libraries, target_include_directories 정도 사용 해주면 된다.
 ```cmake
 find_package(std_cout REQUIRED)
@@ -79,9 +79,10 @@ example_std_cout 이하의 src 디렉토리의 main.cpp 파일을 참고
 StdCout 클래스 객체를 만든 후에  
 info(), warn(), error() 메소드를 사용하면 된다.  
 
-primative 변수를 파라미터로 넘기는 것을 지원하며,  
+primitive type의 변수를 파라미터로 넘기는 것을 지원하며,  
 여러개를 넘길 경우에는 ,(콤마)로 구분해서 넘겨줄 수가 있다.  
-> const char*, std::string, int, bool, double  
+> const char*, std::string, int, bool, double   
+지원 안되는 것들은 컴파일 단계에서 에러 발생  
 
 ```cpp
 StdCout cout;
