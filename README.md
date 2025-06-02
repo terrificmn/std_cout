@@ -2,7 +2,8 @@
 template functions using std::cout with color  
 특별한 기능은 없고 ㅋ 그냥 색깔 표시되어 print를 할 수 있는 기능  
 - info 흰색   
-- warn 녹색   
+- warn 노란색  
+- warnDev 초록색     
 - error 빨간색    
 
 **cpp 버전: c++17 이상**
@@ -14,6 +15,7 @@ template functions using std::cout with color
 ```shell
 tar xvf std_cout_v1.0.2_ubuntu20.tar.xz
 ```
+> version 확인
 
 설치
 ```shell
@@ -93,11 +95,19 @@ cout.info(true);
 cout.info(false);
 std::cout << std::endl;
 
-cout.warn("hello", "world");
+cout.warn("warn", "world");
 float a = 1.5;
 bool b = true;
 int c = 10;
 cout.warn("hello", "world", "a:", a, "b:", b, "c:", c);
+std::cout << std::endl;
+
+cout.warnDev("warnDev", "dev-world");
+a = 101.5;
+b = false;
+c = 30;
+cout.warnDev("dev", "warning", "a:", a, "b:", b, "c:", c);
+cout.warnDev("warning", "green", "a:", a, "b:", b, "c:", c, "res:", true);
 std::cout << std::endl;
 
 cout.error("ERROR" ": unknown");
@@ -109,6 +119,6 @@ cout.error("hello", world, "a:", a, "b:", b, "c:", c, "res:", false);
 ```
 
 ## 버전
-version 1.0.2    
+version 1.1.2    
 c++17  
 by *Gunther*

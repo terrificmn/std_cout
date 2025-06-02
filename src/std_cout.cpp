@@ -17,13 +17,27 @@ void StdCout::error(const char* msg) {
 template<typename T>
 void StdCout::warn(const T& msg) {
     if(typeid(T) == typeid(bool)) {
+        std::cerr << Colour::YELLOW << std::boolalpha << msg << Colour::RESET << std::endl;
+    } else {
+        std::cerr << Colour::YELLOW << msg << Colour::RESET << std::endl;
+    }
+}
+/// overload for char
+void StdCout::warn(const char* msg) {
+    std::cerr << Colour::YELLOW << msg << Colour::RESET << std::endl;
+}
+
+
+template<typename T>
+void StdCout::warnDev(const T& msg) {
+    if(typeid(T) == typeid(bool)) {
         std::cerr << Colour::GREEN << std::boolalpha << msg << Colour::RESET << std::endl;
     } else {
         std::cerr << Colour::GREEN << msg << Colour::RESET << std::endl;
     }
 }
 /// overload for char
-void StdCout::warn(const char* msg) {
+void StdCout::warnDev(const char* msg) {
     std::cerr << Colour::GREEN << msg << Colour::RESET << std::endl;
 }
 
@@ -58,6 +72,12 @@ template void StdCout::warn(const double& msg);
 template void StdCout::warn(const float& msg);
 template void StdCout::warn(const int& msg);
 template void StdCout::warn(const bool& msg);
+
+template void StdCout::warnDev(const std::string& msg);
+template void StdCout::warnDev(const double& msg);
+template void StdCout::warnDev(const float& msg);
+template void StdCout::warnDev(const int& msg);
+template void StdCout::warnDev(const bool& msg);
 
 template void StdCout::info(const std::string& msg);
 template void StdCout::info(const double& msg);

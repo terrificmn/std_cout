@@ -4,6 +4,7 @@
 #include <sstream>
 namespace Colour {
     constexpr const char* WHITE = "\033[37m";
+    constexpr const char* YELLOW = "\033[33m";
     constexpr const char* GREEN = "\033[32m";
     constexpr const char* RED = "\033[1;31m"; // in bold
     constexpr const char* RESET = "\033[0m";
@@ -25,6 +26,12 @@ public:
     void warn(const char* msg); // for overload
     template<typename... Args>
     void warn(const Args&... args);
+
+    template<typename T>
+    void warnDev(const T& msg);
+    void warnDev(const char* msg); // for overload
+    template<typename... Args>
+    void warnDev(const Args&... args);
 
     template<typename T>
     void info(const T& msg);
