@@ -1,6 +1,6 @@
 #!/bin/bash
 param=$1
-version=1.0.2
+version=1.1.2
 
 if [ ! -z $param ]; then
     if [ $param = "install" ]; then
