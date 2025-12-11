@@ -7,6 +7,7 @@ namespace Colour {
     constexpr const char* YELLOW = "\033[33m";
     constexpr const char* GREEN = "\033[32m";
     constexpr const char* RED = "\033[1;31m"; // in bold
+    constexpr const char* CYAN = "\033[36m";
     constexpr const char* RESET = "\033[0m";
 }
 class __attribute__((visibility("default"))) StdCout {

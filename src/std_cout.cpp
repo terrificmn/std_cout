@@ -31,14 +31,14 @@ void StdCout::warn(const char* msg) {
 template<typename T>
 void StdCout::warnDev(const T& msg) {
     if(typeid(T) == typeid(bool)) {
-        std::cerr << Colour::GREEN << std::boolalpha << msg << Colour::RESET << std::endl;
+        std::cerr << Colour::CYAN << std::boolalpha << msg << Colour::RESET << std::endl;
     } else {
-        std::cerr << Colour::GREEN << msg << Colour::RESET << std::endl;
+        std::cerr << Colour::CYAN << msg << Colour::RESET << std::endl;
     }
 }
 /// overload for char
 void StdCout::warnDev(const char* msg) {
-    std::cerr << Colour::GREEN << msg << Colour::RESET << std::endl;
+    std::cerr << Colour::CYAN << msg << Colour::RESET << std::endl;
 }
 
 

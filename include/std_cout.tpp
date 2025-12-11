@@ -52,7 +52,7 @@ void StdCout::warnDev(const Args&... args) {
         // std::cout << "removed the last space\n";
         stream_str.pop_back();
     }
-    std::cerr << Colour::GREEN << stream_str << Colour::RESET << std::endl;
+    std::cerr << Colour::CYAN << stream_str << Colour::RESET << std::endl;
 }
 
 template<typename... Args>
