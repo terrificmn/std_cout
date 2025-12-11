@@ -59,6 +59,20 @@ void StdCout::info(const char* msg) {
 }
 
 
+template<typename T>
+void StdCout::good(const T& msg) {
+    if(typeid(T) == typeid(bool)) {
+        std::cout << Colour::GREEN << std::boolalpha << msg << Colour::RESET << std::endl;        
+    } else {
+        std::cout << Colour::GREEN << msg << Colour::RESET << std::endl;
+    }
+}
+// overload for char
+void StdCout::good(const char* msg) {
+    std::cout << Colour::GREEN << msg << Colour::RESET << std::endl;
+}
+
+
 /// possible available types for parameter are defined. Only these type can be passed through the each function, including const char*. 
 // Explicit Instantiation
 template void StdCout::error(const std::string& msg);
@@ -84,4 +98,10 @@ template void StdCout::info(const double& msg);
 template void StdCout::info(const float& msg);
 template void StdCout::info(const int& msg);
 template void StdCout::info(const bool& msg);
+
+template void StdCout::good(const std::string& msg);
+template void StdCout::good(const double& msg);
+template void StdCout::good(const float& msg);
+template void StdCout::good(const int& msg);
+template void StdCout::good(const bool& msg);
 

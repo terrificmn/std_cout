@@ -39,6 +39,13 @@ public:
     void info(const char* msg); // for overload
     template<typename... Args>
     void info(const Args&... args);
+
+    template<typename T>
+    void good(const T& msg);
+    void good(const char* msg); // for overload
+    template<typename... Args>
+    void good(const Args&... args);
+
 };
 #include "std_cout.tpp" /// FYI: include order is important. because Colour the above is used in template functions
 #endif //STD_COUT_HPP

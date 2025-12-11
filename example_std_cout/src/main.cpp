@@ -2,13 +2,23 @@
 
 int main() {
     StdCout cout;
-    cout.info("hello");
+    cout.info("hello~ information");
     cout.info("1234");
     cout.info(10.0);
     cout.info(true);
     cout.info(false);
     cout.info("name", ": Gunther", "a:", 10.0, "b:", true, "c:", 1);
     cout.info("name", ": Gunther", "a:", 10.0, "b:", false, "c:", 1);
+    std::cout << std::endl;
+    
+    std::cout << "-----------------------\n";
+    cout.good("Successful!");
+    cout.good("1234");
+    cout.good(100.0);
+    cout.good(true);
+    cout.good(false);
+    cout.good("My name", ": Gunther", "a:", 10.0, "b:", true, "c:", 5);
+    cout.good("Your name:", "Who are you", "a:", 25.10, "b:", false, "c:", 1111);
     std::cout << std::endl;
     
     std::cout << "-----------------------\n";
