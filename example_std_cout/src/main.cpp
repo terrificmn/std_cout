@@ -47,4 +47,19 @@ int main() {
     c = 100;
     cout.error("hello", world, "a:", a, "b:", b, "c:", c);
     cout.error("red", world, "a:", a, "b:", b, "c:", c, "res:", false);
+
+    std::cout << "----- etc ----\n";
+    struct MyCustom {
+        int my_number;
+    };
+    MyCustom myCustom;
+    myCustom.my_number = 1234;
+
+    enum MyEnum {
+        MY_CASE_1=0, MY_CASE_2, MY_CASE_DEFAULT
+    };
+
+    cout.info("my number:", myCustom.my_number);
+    cout.good("My case:", MyEnum::MY_CASE_2);
+
 }

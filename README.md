@@ -2,9 +2,11 @@
 template functions using std::cout with color  
 특별한 기능은 없고 ㅋ 그냥 색깔 표시되어 print를 할 수 있는 기능  
 - info 흰색   
+- good 초록색  
+- warnDev 청록색  
 - warn 노란색  
-- warnDev 초록색     
-- error 빨간색    
+- error 빨간색   
+> warn, error 는 cerr 
 
 **cpp 버전: c++17 이상**
 
@@ -79,12 +81,12 @@ example_std_cout 의 CMakeLists.txt 파일을 참고
 example_std_cout 이하의 src 디렉토리의 main.cpp 파일을 참고  
 
 StdCout 클래스 객체를 만든 후에  
-info(), warn(), error() 메소드를 사용하면 된다.  
+info(), good(), warnDev(), warn(), error() 메소드를 사용하면 된다.  
 
 primitive type의 변수를 파라미터로 넘기는 것을 지원하며,  
 여러개를 넘길 경우에는 ,(콤마)로 구분해서 넘겨줄 수가 있다.  
 > const char*, std::string, int, bool, double   
-지원 안되는 것들은 컴파일 단계에서 에러 발생  
+지원 안되는 것들은 미리 컴파일 단계에서 에러 발생   
 
 ```cpp
 StdCout cout;
@@ -93,6 +95,14 @@ cout.info("1234");
 cout.info(10.0);
 cout.info(true);
 cout.info(false);
+std::cout << std::endl;
+
+cout.good("successful");
+cout.good("4321");
+cout.good(20.0);
+cout.good(false);
+cout.good(true);
+cout.good("complete!", 2, "times");
 std::cout << std::endl;
 
 cout.warn("warn", "world");
@@ -119,6 +129,6 @@ cout.error("hello", world, "a:", a, "b:", b, "c:", c, "res:", false);
 ```
 
 ## 버전
-version 1.1.2    
+version 1.2.3    
 c++17  
 by *Gunther*
