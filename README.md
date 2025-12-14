@@ -76,6 +76,31 @@ target_include_directories(my_pkg PRIVATE ${STD_COUT_INCLUDE_DIR})
 ```
 example_std_cout 의 CMakeLists.txt 파일을 참고
 
+## g++ 빌드 시
+libstd_cout 라이브러리를 설치한 후에  g++ 을 이용해서 빌드할 경우에 
+link를 -L 과 -l 옵션으로 지정해준다.  
+
+*-L /path/to/std_cout_library -l 라이브러리이름*  
+
+실제 사용 예
+```
+g++ -std=c++17 main.cpp -o my_proc -I/usr/local/lib/std_cout -lstd_cout
+```
+
+이렇게 하면 라이브러리를 잘 찾아서 빌드가 잘 됨.  
+
+빌드가 완료된 후에는 LD_LIBRARY_PATH 변수에 라이브러리 디렉토리를 추가해줘야  
+실행시에도 문제가 없다.   
+터미널을 열고 
+```
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/std_cout
+```
+
+이후 실행파일을 실행해주면 된다. 
+> 단, 해당 터미널에서만 유효하며, 계속 사용하려면 ~/.bashrc 파일에 넣거나,    
+*/etc/ld.so.conf.d/ 이하에 conf 파일을 만들어서 사용하거나*    
+CMakeLists.txt 를 사용해서 빌드해준다.(아래),
+
 
 ## StdCout class 설명
 example_std_cout 이하의 src 디렉토리의 main.cpp 파일을 참고  
