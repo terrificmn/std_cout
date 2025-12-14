@@ -84,7 +84,7 @@ link를 -L 과 -l 옵션으로 지정해준다.
 
 실제 사용 예
 ```
-g++ -std=c++17 main.cpp -o my_proc -I/usr/local/lib/std_cout -lstd_cout
+g++ -std=c++17 main.cpp -o my_proc -L/usr/local/lib/std_cout -lstd_cout
 ```
 
 이렇게 하면 라이브러리를 잘 찾아서 빌드가 잘 됨.  
